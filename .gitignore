@@ -2,7 +2,6 @@
 sys-php-cgi
 
 # Папки ядра
-wp-admin
 wp-includes
 wp-content/*
 !wp-content/themes/
