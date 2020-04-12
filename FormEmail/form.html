@@ -1,0 +1,63 @@
+<!--http://host1727289.hostland.pro-->
+<style>
+   input:valid + span:after {
+    background-image:url(/wp-content/uploads/formback/ok.png);
+    background-size: 30px 30px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    content:"";
+  }
+   input:invalid + span:after {
+    background-image: url(/wp-content/uploads/formback/nook.png);
+    background-size: 30px 30px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    content:"";
+ }
+   textarea:valid + span:after {
+    background-image:url(/wp-content/uploads/formback/ok.png);
+    background-size: 30px 30px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    content:"";
+  }
+   textarea:invalid + span:after {
+    background-image: url(/wp-content/uploads/formback/nook.png);
+    background-size: 30px 30px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    content:"";
+}
+.inp{display: inline;}
+.inp_after{display:flex;}
+</style>
+<div id="contact-wrapper"><form id="contactform" action="/FormEmail/form.php" 
+enctype="multipart/form-data" method="post">
+<div><label for="name"><strong>Имя:</strong></label>
+<div class=inp_after><input id="contactname" class="inp" name="contactname" required="" size="50" type="text" value="" /><span></span></div>
+</div>
+<div><label for="surname"><strong>Фамилия:</strong></label>
+<div class=inp_after><input id="surname" name="surname" size="50" type="text" value="" /></div>
+</div><div>
+<label for="name"><strong>Email:</strong></label>
+<div class=inp_after><input id="email" class="inp" name="email" required="" size="50" type="text" value="" /><span></span>
+</div></div>
+<div><label for="country"><strong>Страна:</strong></label>
+<div class=inp_after><input id="country" name="country" required="" size="50" type="text" value="" /><span></span></div>
+</div><div>
+<div><label for="city"><strong>Город:</strong></label>
+<div class=inp_after><input id="city" name="city" required="" size="50" type="text" value="" /><span></span></div>
+</div><div><label for="message"><strong>Вопрос:</strong></label>
+<div class=inp_after><textarea id="message" cols="50" name="message" required="" rows="5"></textarea><span></span></div>
+<div><label for="foto"><strong>Прикрепить фото:</strong></label>
+<div class=inp_after><input id="foto" name="foto" size="50" type="file" value="" /></div>
+[execs] require ("FormEmail/captcha.php"); [/execs]
+</div><input name="captcha_validation" style=" margin-bottom:11px" type="text" size="6" maxlength="5"></p>
+<div><input name="submit" type="submit" value="Отправить письмо" /></div>
+</div>
+</form></div>
+[execs] include("FormEmail/form.php"); [/execs]
