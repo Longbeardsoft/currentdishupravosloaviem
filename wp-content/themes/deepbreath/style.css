@@ -2819,6 +2819,9 @@ p.comment-form-comment {
 	  flex-direction:column;
   
     }
+    #primary {
+    	width: auto;
+    }
 	#first{order:1;}
 	#secondary{order:2;}
 	
