@@ -1825,6 +1825,7 @@ video {
 .widget ul li {
 	color: #777;
 	font-size: 13px;
+	padding-bottom: 10px;
 }
 .widget a {
 	font-weight: bold;
