@@ -1,0 +1,57 @@
+@media screen and (max-width: 980px) {
+    #text {
+        font-size: 0.6em;
+
+    }
+}
+
+table#bible td {
+    text-align: center;
+}
+
+#text td {
+    text-align: center;
+}
+
+#text {
+}
+
+h5 {
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    margin: 0 7px;
+    word-wrap: break-word;
+    hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+#interpr h2 {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+#interpr {
+    text-align: justify;
+}
+
+article#post-5536 {
+    width: 100%;
+}
+
+div#content {
+    width: 100%;
+}
+div#primary{
+    width: 100%;
+}
+div#page {
+    width: 100%;
+}
