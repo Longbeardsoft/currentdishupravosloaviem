@@ -1,6 +1,5 @@
-<head>
-    <link rel="stylesheet" type="text/css" href="/Bible/bible.css">
-</head>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/Bible/bible.css">
 <body onload="location = '#verse';">
 <?php
 echo '<table border=1 style="table-layout:fixed;" id=bible width="100%">';
@@ -123,7 +122,7 @@ echo "<script>
   			else checked='all';
   			$.ajax({
   				type: 'get',
-  				url: 'file.php',
+  				url: '/Bible/file.php',
  				data: {'id_book':id_book,'chapter':$chapter,'translate':checked,'verse':$verse},
  				success: function(data){
 				//alert(data);
@@ -177,7 +176,7 @@ echo '</table>';
 //alert(id);
             $.ajax({
                 type: 'post',
-                url: 'ajax_interpr.php',
+                url: '/Bible/ajax_interpr.php',
                 //url: 'Interpretations/Feof_Bolgar/1Co.htm',
                 data: {'id_interpr': id, 'id_book': id_book, 'chapter': chapter},
                 success: function (data) {
@@ -223,7 +222,7 @@ echo '</table>';
             $("#chapter").html(1);
             $.ajax({
                 type: 'get',
-                url: 'ajax_book.php',
+                url: '/Bible/ajax_book.php',
                 data: {'id_book': id_book},
                 success: function (data) {
                     //alert(data);
@@ -232,7 +231,7 @@ echo '</table>';
             });
             $.ajax({
                 type: 'get',
-                url: 'ajax_chapters.php',
+                url: '/Bible/ajax_chapters.php',
                 data: {'id_book': id_book},
                 success: function (data) {
                     //alert(data);
@@ -241,7 +240,7 @@ echo '</table>';
             });
             $.ajax({
                 type: 'get',
-                url: 'file.php',
+                url: '/Bible/file.php',
                 data: {'id_book': id_book, 'chapter': 1, 'translate': checked},
                 success: function (data) {
                     //alert(data);
@@ -253,7 +252,7 @@ echo '</table>';
             //onload();
             //$("#text").scrollIntoView();
             chapter = $("#chapter").text();
-            var text = 'index/?id_book=' + id_book + '&chapter=' + chapter;
+            var text = '/index/?id_book=' + id_book + '&chapter=' + chapter;
             //alert('ok');
             title = $(this).html();
             history.pushState({}, title, text);
@@ -262,7 +261,7 @@ echo '</table>';
             onload();
             return false;
         });
-        $(".chapter").click(function () {
+        $("#chapters").on("click",".chapter",function () {
             //	alert('ok');
             var id_book = $("#book").attr('class');
             //var name_book=$("#book").text();
@@ -273,7 +272,7 @@ echo '</table>';
 //alert(id_book);
             $.ajax({
                 type: 'get',
-                url: 'Bible/file.php',
+                url: '/Bible/file.php',
                 data: {'id_book': id_book, 'chapter': chapter, 'translate': checked},
                 success: function (data) {
                     //alert(data);
