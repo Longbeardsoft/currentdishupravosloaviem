@@ -8,7 +8,7 @@ sys-php-cgi
 wp-includes
 wp-content/*
 !wp-content/themes/
-!wp-content/plugins/
+wp-content/plugins/
 !wp-content/uploads/
 
 # Служебные файлы CMS

@@ -1,0 +1,23 @@
+{
+  "name": "deepbreath",
+  "version": "1.0.0",
+  "description": "frontend environment окружение для сборки и оптимизации файлов фронта с помощью gulp с использованием препроцеввора Sass с синтаксисом scss",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "toyrik",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "node-sass": "^4.13.1"
+  }
+}
