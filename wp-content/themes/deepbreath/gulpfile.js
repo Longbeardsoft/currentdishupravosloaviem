@@ -20,7 +20,7 @@ function devSass() {
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
         .pipe(sourcemaps.write())
-        //.pipe(gcmq())
+        .pipe(gcmq())
         .pipe(gulp.dest('./'));
 }
 
