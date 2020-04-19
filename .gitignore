@@ -8,7 +8,7 @@ sys-php-cgi
 wp-includes
 wp-content/*
 !wp-content/themes/
-wp-content/plugins/
+wp-content/plugins/*
 !wp-content/uploads/
 
 # Служебные файлы CMS
@@ -28,3 +28,4 @@ wp-settings.php
 wp-signup.php
 wp-trackback.php
 xmlrpc.php
+/wp-content/plugins/
