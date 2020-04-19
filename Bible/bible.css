@@ -13,9 +13,6 @@ table#bible td {
     text-align: center;
 }
 
-#text {
-}
-
 h5 {
     color: black;
 }
@@ -60,4 +57,13 @@ div#page {
 th h4{
     font-size: 20px;
     text-align: center;
+}
+p{
+    margin-bottom: 0;
+}
+.singular.page .hentry {
+    padding: 0;
+}
+.entry-content, .entry-summary{
+    padding:0;
 }
