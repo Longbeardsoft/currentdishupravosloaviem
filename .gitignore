@@ -1,6 +1,9 @@
 # Папки скриптов хостинга
 sys-php-cgi
 
+# Папки гита
+.idea
+
 # Папки ядра
 wp-includes
 wp-content/*
