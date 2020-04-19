@@ -30,7 +30,7 @@
 					the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
 				}
 				?>
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'deepbreath' ) ); ?>" class="imprint" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'deepbreath' ); ?>">
+				<a href="<?php echo esc_url( __( 'http://longbeardsoft.ru/', 'deepbreath' ) ); ?>" class="imprint" title="<?php esc_attr_e( 'Разработка сайтов', 'deepbreath' ); ?>">
 					<?php printf( __( 'Разработано %s', 'deepbreath' ), 'longbeardsoft.ru' ); ?>
 				</a>
 			</div>
