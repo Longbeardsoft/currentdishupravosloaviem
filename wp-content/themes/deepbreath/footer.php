@@ -40,7 +40,7 @@
                 <!-- END Top100 (Kraken) Widget -->
                 <br>
 				<a href="<?php echo esc_url( __( 'http://longbeardsoft.ru/', 'deepbreath' ) ); ?>" class="imprint" title="<?php esc_attr_e( 'Разработка сайтов', 'deepbreath' ); ?>">
-					<?php printf( __( 'Разработано %s', 'deepbreath' ), 'longbeardsoft.ru' ); ?>
+					<?php printf( __( 'Разработано %s', 'deepbreath' ), 'Longbeardsoft.ru' ); ?>
 				</a>
 
 <!-- Yandex.Metrika counter -->
