@@ -171,6 +171,10 @@ echo '</table>';
 //onload = function () {document.getElementsByName ('verse').scrollIntoView()};
         $(".interpretation").click(function () {
             var id = $(this).attr('id');
+            $(".interpretation").each(function() {
+                $( this ).css('text-decoration','none');
+            });
+            $(this).css('text-decoration','underline');
             var id_book = $("#book").attr('class');
             var chapter = $("#chapter").text();
 //alert(id);
