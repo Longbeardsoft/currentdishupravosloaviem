@@ -19,5 +19,8 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4",
     "node-sass": "^4.13.1"
-  }
+  },
+  "browserslist": [
+    "> 1%"
+  ]
 }

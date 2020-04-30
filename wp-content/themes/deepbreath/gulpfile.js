@@ -28,7 +28,6 @@ function stylesSass() {
     return gulp.src(patch.sassFiles.dev)
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
-            browsers: ['>0.1%'],
             cascade: false
         }))
         .pipe(cleanCSS({
