@@ -15,24 +15,18 @@ const patch = {
 
 };
 
-function devSass() {
-    return gulp.src(patch.sassFiles.dev)
-        .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-        .pipe(sourcemaps.write())
-        .pipe(gcmq())
-        .pipe(gulp.dest('./'));
-}
-
 function stylesSass() {
     return gulp.src(patch.sassFiles.dev)
+        .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
             cascade: false
         }))
+        .pipe(gcmq())
         .pipe(cleanCSS({
             level: 2
         }))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./'));
 }
 
@@ -41,4 +35,3 @@ function clear() {
 }
 
 gulp.task('build', gulp.series(clear, gulp.parallel(stylesSass)));
-gulp.task('dev', gulp.series(clear, gulp.parallel(devSass)));
