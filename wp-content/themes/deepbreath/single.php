@@ -19,12 +19,11 @@ get_header(); ?>
 
 					<nav id="nav-single">
 						<h3 class="assistive-text"><?php _e( 'Post navigation', 'deepbreath' ); ?></h3>
-						<span class="author-text"><?php echo ' Автор ';echo '<a href="">';the_author();echo '</a>'; ?></span><br>
-						
+
 						<span class="nav-previous"><?php previous_post_link( '%link', __( '<span class="meta-nav">&larr;</span> %title', 'deepbreath' ) ); ?></span>
 						<span class="nav-next"><?php next_post_link( '%link', __( '%title <span class="meta-nav">&rarr;</span>', 'deepbreath' ) ); ?></span>
 					</nav><!-- #nav-single -->
-
+                    <span class="author-text"><?php echo '<b>Автор:</b>';echo '<a href="http://'.$_SERVER['HTTP_HOST'].'/anatolij-badanov/"><b>';the_author();echo '</b></a>'; ?></span><br>
 					<?php get_template_part( 'content-single', get_post_format() ); ?>
 
 					<?php //comments_template( '', true ); ?>

@@ -94,7 +94,7 @@ body {
 }
 .singular #content,
 .left-sidebar.singular #content {
-    margin: 0 7.6%;
+    //margin: 0 7.6%;
     position: relative;
     width: auto;
 }
@@ -753,7 +753,7 @@ a:hover {
     color: #1982d1;
 }
 .entry-meta {
-    color: #666;
+    //color: #666;
     clear: both;
     font-size: 12px;
     line-height: 18px;
@@ -1742,7 +1742,7 @@ video {
     padding: 0 0 1.625em;
 }
 #content nav a {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: bold;
     line-height: 2.2em;
 }
@@ -1770,7 +1770,7 @@ video {
 
 /* Singular navigation */
 #nav-single {
-    float: right;
+    //float: right;
     position: relative;
     top: -0.3em;
     text-align: right;
