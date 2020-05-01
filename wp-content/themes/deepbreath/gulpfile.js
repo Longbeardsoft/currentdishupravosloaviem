@@ -18,14 +18,15 @@ const patch = {
 function stylesSass() {
     return gulp.src(patch.sassFiles.dev)
         .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(sass().on('error', sass.logError))
+        // .pipe(sass().on('error', sass.logError))
+        .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
         .pipe(autoprefixer({
             cascade: false
         }))
         .pipe(gcmq())
-        .pipe(cleanCSS({
-            level: 2
-        }))
+        // .pipe(cleanCSS({
+        //     level: 2
+        // }))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./'));
 }
