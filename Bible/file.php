@@ -32,7 +32,7 @@ foreach ($lines as $line_num => $line) {
     if (strcasecmp($m, $chapter) == 0)
         if (preg_match('/^([0-9#]{1,3})\s(\D+)/', $line, $matches)) {
             $numVerse[$i] = $matches[1];
-            $textVerse[$i] = $matches[2];
+            $textVerse[$i] = str_replace("_", " ", $matches[2]);
             $i++;
             //		echo "<tr><td>$numVerse</td><td>$textVerse</td><td>empty</td></tr>";
         }
@@ -46,7 +46,7 @@ foreach ($lines_slavic as $line_num => $line) {
     if (strcasecmp($m, $chapter) == 0)
         if (preg_match('/^([0-9#]{1,3})\s(\D+)/', $line, $matches)) {
             $numVerseSlavic[$i] = $matches[1];
-            $textVerseSlavic[$i] = $matches[2];
+            $textVerseSlavic[$i] = str_replace("_", " ", $matches[2]);
             $i++;
             //		echo "<tr><td>$numVerse</td><td>$textVerse</td><td>empty</td></tr>";
         }
