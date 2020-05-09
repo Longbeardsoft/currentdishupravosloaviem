@@ -403,6 +403,137 @@ switch ($id_interpr) {
         $book_id++;
         break;
     }
+    case 3:{
+        $avtor = 'Ефрем Сирин';
+        switch ($id_book) {
+            case 53:
+                $htm_files[0] = '1Co.htm';
+                $book_id=0;
+                break;
+            case 59:
+                $htm_files[1] = '1The.htm';
+                $book_id=1;
+                break;
+            case 61:
+                $htm_files[2] = '1Ti.htm';
+                $book_id=2;
+                break;
+            case 54:
+                $htm_files[3] = '2Co.htm';
+                $book_id=3;
+                break;
+            case 60:
+                $htm_files[4] = '2The.htm';
+                $book_id=4;
+                break;
+            case 62:
+                $htm_files[5] = '2Ti.htm';
+                $book_id=5;
+                break;
+            case 30:
+                $htm_files[6] = 'Am.htm';
+                $book_id=6;
+                break;
+            case 58:
+                $htm_files[7] = 'Col.htm';
+                $book_id=7;
+                break;
+            case 27:
+                $htm_files[8] = 'Dan.htm';
+                $book_id=8;
+                break;
+            case 5:
+                $htm_files[9] = 'De.htm';
+                $book_id=9;
+                break;
+            case 56:
+                $htm_files[10] = 'Eph.htm';
+                $book_id=10;
+                break;
+            case 2:
+                $htm_files[11] = 'Ex.htm';
+                $book_id=11;
+                break;
+            case 26:
+                $htm_files[12] = 'Ezek.htm';
+                $book_id=12;
+                break;
+            case 55:
+                $htm_files[13] = 'Ga.htm';
+                $book_id=13;
+                break;
+            case 1:
+                $htm_files[14] = 'Ge.htm';
+                $book_id=14;
+                break;
+            case 65:
+                $htm_files[15] = 'He.htm';
+                $book_id=15;
+                break;
+            case 28:
+                $htm_files[16] = 'Hos.htm';
+                $book_id=16;
+                break;
+            case 23:
+                $htm_files[17] = 'Is.htm';
+                $book_id=17;
+                break;
+            case 24:
+                $htm_files[18] = 'Jer.htm';
+                $book_id=18;
+                break;
+            case 1:
+                $htm_files[19] = 'Jl.htm';
+                $book_id=19;
+                break;
+            case 25:
+                $htm_files[20] = 'Lam.htm';
+                $book_id=20;
+                break;
+            case 3:
+                $htm_files[21] = 'Le.htm';
+                $book_id=21;
+                break;
+            case 39:
+                $htm_files[22] = 'Ma.htm';
+                $book_id=22;
+                break;
+            case 33:
+                $htm_files[23] = 'Mic.htm';
+                $book_id=23;
+                break;
+            case 4:
+                $htm_files[24] = 'Nu.htm';
+                $book_id=24;
+                break;
+            case 31:
+                $htm_files[25] = 'Ob.htm';
+                $book_id=25;
+                break;
+            case 57:
+                $htm_files[26] = 'Php.htm';
+                $book_id=26;
+                break;
+            case 52:
+                $htm_files[27] = 'Ro.htm';
+                $book_id=27;
+                break;
+            case 63:
+                $htm_files[28] = 'Tit.htm';
+                $book_id=28;
+                break;
+            case 38:
+                $htm_files[29] = 'Za.htm';
+                $book_id=29;
+                break;
+            default:
+                $id_book = '-1';
+                $book_id = '-1';
+                break;
+        }
+        $book_id++;
+        break;
+    }
     default:
     {
         $avtor = 'Толкователь не выбран';

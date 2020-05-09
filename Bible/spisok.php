@@ -34,7 +34,7 @@ $FullName[7] = 'Книга Судей';
 $ShortName[7] = 'Суд.';
 $ChapterQty[7] = 21;
 
-$PathName[8] = '08_ruf.txt.htm';
+$PathName[8] = '08_ruf.txt';
 $FullName[8] = 'Руфь';
 $ShortName[8] = 'Руф.';
 $ChapterQty[8] = 4;
