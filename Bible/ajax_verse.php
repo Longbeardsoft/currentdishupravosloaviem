@@ -567,7 +567,8 @@ if ($id_book != '-1') {
         //echo '$id_interpr='.$id_avtor.
         //echo '<h2>'.iconv('UTF-8', 'Windows-1251','Феофилакт Болгарский').'</h2>'.iconv('UTF-8', 'Windows-1251',$row["text"]);
         //echo 'id_interpr=' . $id_interpr . '!'."avtor=".$avtor;
-        echo '<h2>' . $avtor . '</h2><h2 style="color:red;"> ' . $fullName . '</h2>' . $row["text"];
+        if ($row["text"]) echo '<h2>' . $avtor . '</h2><h2 style="color:red;"> ' . $fullName . '</h2>' . $row["text"];
+        else echo "-1";
     } else {
         //echo "Error: " . $sql . "<br>" . mysqli_error($link);
         echo "-1";
