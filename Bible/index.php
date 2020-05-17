@@ -1,7 +1,13 @@
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/Bible/bible.css">
+<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/Bible/js/search.js"></script>
+<link rel="stylesheet" type="text/css" href="/Bible/css/bible.css">
+<link rel="stylesheet" type="text/css" href="/Bible/css/search.css">
+<input type="text" name="referal" placeholder="Поиск по библии" value="" class="who"  autocomplete="off">
+<ul class="search_result"></ul>
 <body onload="location = '#verse';">
 <?php
+
 echo '<table border=1 style="table-layout:fixed;" id=bible width="100%">';
 //<tr><th ><h4>ВЫБОР КНИГ БИБЛИИ</h4></th></tr>
 echo '<tr><th ><h4 >Ветхий Завет</h4></th></tr>';
