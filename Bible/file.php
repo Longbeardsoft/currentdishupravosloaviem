@@ -1,6 +1,7 @@
 <?php
 // Получает содержимое файла в виде массива. В данном примере мы используем
 // обращение по протоколу HTTP для получения HTML-кода с удаленного сервера.
+$referal = $_REQUEST['referal'];
 $id_book = $_REQUEST['id_book'];
 $chapter = $_REQUEST['chapter'];
 $verse = $_REQUEST['verse'];

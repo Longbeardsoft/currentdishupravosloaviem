@@ -295,7 +295,8 @@ echo '</table>';
             history.pushState({}, title, text);
             return false;
         });
-    });//ready
+    });
+   //ready
 </script>
 </div>
 </body>

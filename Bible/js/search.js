@@ -1,15 +1,19 @@
 $(function(){
 
 //Живой поиск
-    $('.who').bind("change keyup input click", function() {
-        if(this.value.length >= 2){
-            $.ajax({
+   $('.who').bind("change keyup input click", function() {
+        if (this.value.length >= 3){
+           $.ajax({
                 type: 'get',
                 url: "/Bible/search.php", //Путь к обработчику
-                dаta: {'referal':this.value},
+                data: {'referal':this.value},
                 response: 'text',
+                //cache: false,
                 success: function(data){
                     $(".search_result").html(data).fadeIn(); //Выводим полученые данные в списке
+                },
+                error: function(error) {
+                    alert(error);
                 }
             })
         }
