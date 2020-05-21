@@ -54,21 +54,21 @@ foreach ($lines_slavic as $line_num => $line) {
 for ($i = 0; $i < sizeof($numVerse); $i++) {
     if ($translate == 'all')
         if ($i == $verse - 1)
-            echo "<tr class=verse id=$numVerse[$i]><td ><a name='verse' style='display:block;margin-bottom:70px; margin-top:-550px'></a></td></tr><tr style='background:lightgrey;'><td width=3%>$ShortName$chapter:$numVerse[$i]</td><td width=50%>$textVerse[$i]</td><td width=50%>$textVerseSlavic[$i]</td></tr>";
+            echo "<tr class=verse id=$numVerse[$i]><td ><a name='verse_search' style='display:block;/*margin-bottom:70px; margin-top:-550px*/'></a></td></tr><tr class=verse id=$numVerse[$i] style='background:lightgrey;'><td width=3%>$ShortName$chapter:$numVerse[$i]</td><td width=50%>$textVerse[$i]</td><td width=50%>$textVerseSlavic[$i]</td></tr>";
         else
             echo "<tr class=verse id=$numVerse[$i] style='background:white;'><td width=3%>$ShortName$chapter:$numVerse[$i]</td><td width=50%>$textVerse[$i]</td><td width=50%>$textVerseSlavic[$i]</td></tr>";
     else if ($translate == 'synodal')
         if ($i == $verse - 1)
-            echo "<tr ><td><a name='verse' style='display:block;margin-bottom:70px; margin-top:-550px'></a></td></tr><tr style='background:lightgrey;'><td>$ShortName$chapter:$numVerse[$i]</td><td>$textVerse[$i]</td></tr>";
+            echo "<tr ><td><a name='verse_search' style='display:block;'></a></td></tr><tr class=verse id=$numVerse[$i] style='background:lightgrey;'><td>$ShortName$chapter:$numVerse[$i]</td><td>$textVerse[$i]</td></tr>";
         else
             echo "<tr style='background:white;'><td>$ShortName$chapter:$numVerse[$i]</td><td>$textVerse[$i]</td></tr>";
     else if ($translate == 'slavic')
         if ($i == $verse - 1)
-            echo "<tr ><td><a name='verse' style='display:block;margin-bottom:70px; margin-top:-550px'></a></td></tr><tr style='background:lightgrey;'><td>$ShortName$chapter:$numVerse[$i]</td><td>$textVerseSlavic[$i]</td></tr>";
+            echo "<tr ><td><a name='verse_search' style='display:block;'></a></td></tr><tr class=verse id=$numVerse[$i] style='background:lightgrey;'><td>$ShortName$chapter:$numVerse[$i]</td><td>$textVerseSlavic[$i]</td></tr>";
         else
             echo "<tr style='background:white;'><td>$ShortName$chapter:$numVerse[$i]</td><td>$textVerseSlavic[$i]</td></tr>";
 }
-//echo "<tr><td><a href='#verse'>Наверх</a></td></tr>";
+echo "<tr><td><a href='#verse'>Наверх</a></td></tr>";
 ?>
 
 <script>

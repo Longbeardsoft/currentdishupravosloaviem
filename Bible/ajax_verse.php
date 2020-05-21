@@ -548,10 +548,10 @@ if ($id_book != '-1') {
     $host = 'localhost'; // адрес сервера
     $database = "host1382121_bible"; // имя базы данных
     //echo "book_id=" . $book_id;
-    $user = 'host1382121'; // имя пользователя
-    $password = '15b47f6a'; // пароль
-    //$user = 'root'; // имя пользователя
-    //$password = ''; // пароль
+    //$user = 'host1382121'; // имя пользователя
+    //$password = '15b47f6a'; // пароль
+    $user = 'root'; // имя пользователя
+    $password = ''; // пароль
 
     $link = mysqli_connect($host, $user, $password, $database)
     or die("Ошибка " . mysqli_error($link));
