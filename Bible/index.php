@@ -3,7 +3,7 @@
 <script src="/Bible/js/search.js"></script>
 <link rel="stylesheet" type="text/css" href="/Bible/css/bible.css">
 <link rel="stylesheet" type="text/css" href="/Bible/css/search.css">
-<input type="text" name="referal" placeholder="Поиск по библии" value="" class="who"  autocomplete="off">
+<input type="text" name="referal" placeholder="Поиск по библии - начните вводить фразу из стиха" value="" class="who"  autocomplete="off">
 <ul class="search_result"></ul>
 <body onload="location = '#verse';">
 <?php
@@ -159,9 +159,12 @@ echo '</table>';
 <script>
     $(document).ready(function () {
         onload = function () {
-            if (location.toString().indexOf("#verse", 0) == -1) location += '#verse'
+            if (location.toString().indexOf("#verse", 0) == -1) location += '#verse';
         };
         onload_interpr = function () {
+            if (location.toString().indexOf("#verse_search", 0) != -1){
+                location = location.toString().replace("#verse_search", "#verse");
+            }
             if (location.toString().indexOf("#verse", 0) != -1 && location.toString().indexOf("#interpr_onload", 0) == -1) {
                 location = location.toString().replace("#verse", "") + '#interpr_onload';
             } else if (location.toString().indexOf("#verse", 0) != -1 && location.toString().indexOf("#interpr_onload", 0) != -1) {
