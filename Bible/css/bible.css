@@ -67,3 +67,6 @@ p{
 .entry-content, .entry-summary{
     padding:0;
 }
+a:hover{
+    color: #00aaff;
+}

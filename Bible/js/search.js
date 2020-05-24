@@ -3,8 +3,9 @@ $(function(){
         if (location.toString().indexOf("#verse_search", 0) == -1) location += '#verse_search';
     };
 //Живой поиск
-   $('.who').bind("change keyup input click", function() {
-        if (this.value.length >= 3){
+//   $('.who').bind("change keyup input click", function() {
+     $('.who').keyup(function(event){
+         if(event.keyCode == 13 && this.value.length >= 3){
            $.ajax({
                 type: 'get',
                 url: "/Bible/search.php", //Путь к обработчику

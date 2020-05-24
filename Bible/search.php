@@ -1,11 +1,6 @@
 <?php
 $referal = mb_strtolower($_REQUEST['referal']);
-define("DB_HOST", "localhost");
-define("DB_NAME", "host1382121_bible"); //Имя базы
-//define("DB_USER", "root"); //Пользователь
-//define("DB_PASSWORD", ""); //Пароль
-define("DB_USER","host1382121"); //Пользователь
-define("DB_PASSWORD","15b47f6a"); //Пароль
+require_once ('config_db_bible.php');
 define("PREFIX", ""); //Префикс если нужно
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 $mysqli->query("SET NAMES 'utf8'") or die ("Ошибка соединения с базой!");
