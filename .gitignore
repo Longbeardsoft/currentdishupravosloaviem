@@ -13,7 +13,8 @@ wp-content/*
 
 # Служебные файлы CMS
 sitemap*
-
+Bible/config_db_bible.php
+Bible/config_db_interpretations.php
 wp-activate.php
 wp-blog-header.php
 wp-comments-post.php
