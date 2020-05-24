@@ -3,7 +3,8 @@
 <script src="/Bible/js/search.js"></script>
 <link rel="stylesheet" type="text/css" href="/Bible/css/bible.css">
 <link rel="stylesheet" type="text/css" href="/Bible/css/search.css">
-<input type="text" name="referal" placeholder="Поиск по библии - начните вводить фразу из стиха" value="" class="who"  autocomplete="off">
+<input type="text" name="referal" placeholder="ПОИСК ПО БИБЛИИ - начните вводить фразу из стиха" value="" class="who"
+       autocomplete="off">
 <ul class="search_result"></ul>
 <body onload="location = '#verse';">
 <?php
@@ -15,7 +16,10 @@ echo '<tr><th ><h4 >Ветхий Завет</h4></th></tr>';
 echo '<tr><td><p lang="ru">';
 include("spisok.php");
 for ($i = 1; $i < 6; $i++) {
-    echo "<a href='' id=$i class=book>$FullName[$i]</a>";
+    if ($i === 1)
+        echo "<a href='' id=$i class=book style='text-decoration:underline;'>$FullName[$i]</a>";
+    else
+        echo "<a href='' id=$i class=book>$FullName[$i]</a>";
 }
 //echo "</td></tr><td><h5 >Книги Исторические</h5></td></tr>
 echo "</p></td></tr>";
@@ -79,15 +83,18 @@ $s = 'Толкования';
 $m[0] = 'блж.Феофилакт Болг.';
 $m[1] = 'А.Лопухин';
 $m[2] = 'Ефрем Сирин';
-$m[3] = 'А. Иванов';
+/*$m[3] = 'А. Иванов';
 $m[4] = 'еп. Михаил (Лузин)';
 $m[5] = 'св. Иоанн Златоуст';
-$m[6] = 'Климент Алекс.';
+$m[6] = 'Климент Алекс.';*/
 echo "<tr><td >
 <h4 id=interpretation>$s</h4></td></tr><tr>
 <td >";
 for ($j = 0; $j < sizeof($m); $j++) {
-    echo "<a href='' id=$j class=interpretation>$m[$j]</a> ";
+    if ($j === 1)
+        echo "<a href='' id=$j class=interpretation style='text-decoration:underline;'>$m[$j]</a> ";
+    else
+        echo "<a href='' id=$j class=interpretation>$m[$j]</a> ";
 }
 echo "</td></tr>";
 if (!isset($_REQUEST['id_book']))
@@ -110,7 +117,10 @@ echo "<tr><td ><div style='display:-webkit-inline-box;'><h4 id=book class=$id_bo
 echo "<a name='verse'></a>";
 echo "<tr><td ><div id=chapters>";
 for ($j = 1; $j <= $ChapterQty[$id_book]; $j++) {
-    echo "<a href='' id=$j class=chapter>$j</a> ";
+/*    if ($j===1)
+        echo "<a href='' id=$j class=chapter style='text-decoration:underline;'>$j</a> ";
+    else*/
+        echo "<a href='' id=$j class=chapter>$j</a> ";
 }
 echo "</div></td></tr>";
 echo "</table>";
@@ -162,7 +172,7 @@ echo '</table>';
             if (location.toString().indexOf("#verse", 0) == -1) location += '#verse';
         };
         onload_interpr = function () {
-            if (location.toString().indexOf("#verse_search", 0) != -1){
+            if (location.toString().indexOf("#verse_search", 0) != -1) {
                 location = location.toString().replace("#verse_search", "#verse");
             }
             if (location.toString().indexOf("#verse", 0) != -1 && location.toString().indexOf("#interpr_onload", 0) == -1) {
@@ -177,36 +187,22 @@ echo '</table>';
                 location = location.toString().replace("#interpr_onload", "") + '#interpr_onload';
             }
         };
-//onload = function () {document.getElementsByName ('verse').scrollIntoView()};
         $(".interpretation").click(function () {
             var id = $(this).attr('id');
-            $(".interpretation").each(function() {
-                $( this ).css('text-decoration','none');
+            $(".interpretation").each(function () {
+                $(this).css('text-decoration', 'none');
             });
-            $(this).css('text-decoration','underline');
+            $(this).css('text-decoration', 'underline');
             var id_book = $("#book").attr('class');
             var chapter = $("#chapter").text();
-//alert(id);
+            //alert(id);
             $.ajax({
                 type: 'post',
                 url: '/Bible/ajax_interpr.php',
-                //url: 'Interpretations/Feof_Bolgar/1Co.htm',
                 data: {'id_interpr': id, 'id_book': id_book, 'chapter': chapter},
                 success: function (data) {
                     //alert("!"+data+"!");
                     if (data != '-1') {
-                        /*var data = $(data);
-                        //alert(data.find('#1').html());
-                        glava=data.find('#'+chapter).html();
-                        //$("#interpr").html(glava);
-                        //var styx = glava.search(/[0-9]/);
-                        var stx=4;
-                        var expr = new RegExp(/p>[0-9]+([\s\S]*?)p>[0-9]+/);
-                        var styx=glava.match(expr);
-                        alert(styx);
-                        str=styx.replace(/p>[0-9]+$/i,"!");
-                        $("#interpr").html('<'+styx);
-                        $("#interpr").css('color','black');*/
                         $("#interpr").html(data);
                         $("h1").remove();
                         $("#interpr").before('<' + 'h1' + '>' + 'Tолкование' + '<' + '/h1' + '>');
@@ -219,7 +215,6 @@ echo '</table>';
                     }
                 }
             });
-//$("#interpr").load("Interpretations/Feof_Bolgar/test.html"); 			
             return false;
         });
         $(".book").click(function () {
@@ -230,9 +225,19 @@ echo '</table>';
             else if (slavicChecked && !synodalChecked) checked = 'slavic';
             else checked = 'all';
             //alert(id_book);
-            //	alert(id_book);
             $("#book").attr('class', id_book);
             $("#chapter").html(1);
+            $(".book").each(function () {
+                $(this).css('text-decoration', 'none');
+            });
+            $(this).css('text-decoration', 'underline');
+            $(".chapter").each(function () {
+                console.log('!'+$(this).html());
+                if ($(this).attr('id') === 1)
+                    $(this).css('text-decoration', 'underline');
+                else
+                    $(this).css('text-decoration', 'none');
+            });
             $.ajax({
                 type: 'get',
                 url: '/Bible/ajax_book.php',
@@ -245,7 +250,7 @@ echo '</table>';
             $.ajax({
                 type: 'get',
                 url: '/Bible/ajax_chapters.php',
-                data: {'id_book': id_book},
+                data: {'id_book': id_book,'chapter':1},
                 success: function (data) {
                     //alert(data);
                     $("#chapters").html(data);
@@ -260,29 +265,22 @@ echo '</table>';
                     $("#text").html(data);
                 }
             });
-            //alert(screen.width);
-            //$("#table").css('width',"100px");
-            //onload();
-            //$("#text").scrollIntoView();
             chapter = $("#chapter").text();
             var text = '/index/?id_book=' + id_book + '&chapter=' + chapter;
             //alert('ok');
             title = $(this).html();
             history.pushState({}, title, text);
-//		var target ='#verse';
-//$('body').animate({scrollTop: $(target).offset().top}, 800);
             onload();
             return false;
         });
-        $("#chapters").on("click",".chapter",function () {
+        $("#chapters").on("click", ".chapter", function () {
             //	alert('ok');
             var id_book = $("#book").attr('class');
-            //var name_book=$("#book").text();
             chapter = $(this).attr('id');
             //	$("#book").html(name_book);
             $("#chapter").html(chapter);
             //alert(chapter);
-//alert(id_book);
+            //alert(id_book);
             $.ajax({
                 type: 'get',
                 url: '/Bible/file.php',
@@ -299,7 +297,7 @@ echo '</table>';
             return false;
         });
     });
-   //ready
+    //ready
 </script>
 </div>
 </body>

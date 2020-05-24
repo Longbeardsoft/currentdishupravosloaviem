@@ -6,6 +6,7 @@ $chapter = $_REQUEST['chapter'];
 $verse = $_REQUEST['verse'];
 session_start();
 if (isset($_SESSION['interpretation'])) $id_interpr = $_SESSION['interpretation'];
+else $id_interpr=2;
 //echo 'id_interpr=' . $id_interpr . "ID_BOOK=" . $id_book . " CHAPTER=" . $chapter . " verse=".$verse." session=".$_SESSION['interpretation'];
 switch ($id_interpr) {
     case 1:
@@ -545,14 +546,7 @@ switch ($id_interpr) {
 if ($id_book != '-1') {
     include 'spisok.php';
     $fullName = $FullName[$id_book] . ' ' . $chapter . ':' . $verse;
-    $host = 'localhost'; // адрес сервера
-    $database = "host1382121_bible"; // имя базы данных
-    //echo "book_id=" . $book_id;
-    $user = 'host1382121'; // имя пользователя
-    $password = '15b47f6a'; // пароль
-    //$user = 'root'; // имя пользователя
-    //$password = ''; // пароль
-
+    require_once ('config_db_interpretations.php');
     $link = mysqli_connect($host, $user, $password, $database)
     or die("Ошибка " . mysqli_error($link));
 
